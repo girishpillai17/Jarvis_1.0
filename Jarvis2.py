@@ -17,11 +17,13 @@ def greet():
         This will greet me..
     '''
     # Get the current hr
+    say("please enter your name")
+    name = input("Enter your name: ")
     hr = datetime.datetime.now().hour
     if hr >= 6 and hr < 12:
-        say("Good Morning Master Gaurav")
-    elif hr >= 12 and hr < 16:
-        say("Good evening Master Gaurav")
+        say("Good Morning Master" + name)
+    elif hr >= 12 and hr < 23:
+        say("Good evening Master " + name)
     elif hr == 23:
         say("It's time to shut down the laptop and have a good night sleep master")
         say("Shutting everything down...")
@@ -41,7 +43,7 @@ def takeCommand():
             print(f"User said: {query}")
         except Exception as e:
             print(e)                                        # Printing the error
-            return "None"
+            return None
         return query
 
 
